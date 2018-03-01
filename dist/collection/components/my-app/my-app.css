@@ -1,0 +1,1 @@
+:host{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;--welcome:#000;--welcome-large:#ff41b4;--main:gold;color:var(--main,#000)}:host .welcome{color:var(--welcome)}@media screen and (min-width:60em){:host .welcome{color:var(--welcome-large)}}

@@ -1,0 +1,20 @@
+@import '../_variables';
+@import '../_utils';
+
+:host {
+  display: flex;
+
+  @include createVariable(welcome, $black);
+  @include createVariable(welcome-large, $hot-pink);
+  @include createVariable(main, $yellow);
+
+  color: var(--main, $black);
+
+  .welcome {
+    color: var(--welcome);
+
+    @media #{$breakpoint-large} {
+      color: var(--welcome-large);
+    }
+  }
+}
