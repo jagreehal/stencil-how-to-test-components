@@ -1,3 +1,0 @@
-@mixin createVariable($name, $value) {
-  --#{$name}: $value;
-}
