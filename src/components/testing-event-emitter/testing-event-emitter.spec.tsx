@@ -1,4 +1,4 @@
-import { render, flush } from '@stencil/core/testing';
+import { TestWindow } from '@stencil/core/testing';
 import { TestingEventEmitter } from './testing-event-emitter';
 
 
@@ -9,12 +9,14 @@ describe('testing-event-emitter', () => {
 
   describe('rendering', () => {
     let element;
+    let window;
     beforeEach(async () => {
-      element = await render({
+      window = new TestWindow();
+      element = await window.load({
         components: [TestingEventEmitter],
         html: '<testing-event-emitter></testing-event-emitter>'
       });
-      await flush(element);
+      await window.flush();
     });
 
     // this fails at the moment :(
