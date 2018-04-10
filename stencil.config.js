@@ -3,9 +3,14 @@ const sass = require('@stencil/sass');
 
 exports.config = {
   namespace: 'stencil-app',
-  generateDistribution: true,
-  generateWWW: true,
-  serviceWorker: null,
+  outputTargets: [{
+      type: 'www',
+      serviceWorker: null
+    },
+    {
+      type: 'dist'
+    }
+  ],
   plugins: [
     sass(),
     postcss({
