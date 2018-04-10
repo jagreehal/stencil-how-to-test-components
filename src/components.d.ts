@@ -3,6 +3,9 @@
  * It contains typing information for all components that exist in this project
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
+
+import '@stencil/core';
+
 declare global {
   namespace JSX {
     interface Element {}
@@ -13,158 +16,179 @@ declare global {
   interface HTMLStencilElement extends HTMLElement {
     componentOnReady(): Promise<this>;
     componentOnReady(done: (ele?: this) => void): void;
+
+    forceUpdate(): void;
   }
 
   interface HTMLAttributes {}
 }
 
-
 import {
-  TestingClickEvent as TestingClickEvent
-} from './components/testing-click-event/testing-click-event';
+  EventEmitter,
+} from '@stencil/core';
+import {
+  SomethingHappened,
+} from './components/testing-event-emitter/testing-event-emitter';
 
 declare global {
-  interface HTMLTestingClickEventElement extends TestingClickEvent, HTMLStencilElement {
+  interface HTMLTestingClickEventElement extends HTMLStencilElement {
+
   }
   var HTMLTestingClickEventElement: {
     prototype: HTMLTestingClickEventElement;
     new (): HTMLTestingClickEventElement;
   };
   interface HTMLElementTagNameMap {
-    "testing-click-event": HTMLTestingClickEventElement;
+    'testing-click-event': HTMLTestingClickEventElement;
   }
   interface ElementTagNameMap {
-    "testing-click-event": HTMLTestingClickEventElement;
+    'testing-click-event': HTMLTestingClickEventElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "testing-click-event": JSXElements.TestingClickEventAttributes;
+      'testing-click-event': JSXElements.TestingClickEventAttributes;
     }
   }
   namespace JSXElements {
     export interface TestingClickEventAttributes extends HTMLAttributes {
-      
+
     }
   }
 }
 
 
-import {
-  TestingEventEmitter as TestingEventEmitter
-} from './components/testing-event-emitter/testing-event-emitter';
-
 declare global {
-  interface HTMLTestingEventEmitterElement extends TestingEventEmitter, HTMLStencilElement {
+  interface HTMLTestingEventEmitterElement extends HTMLStencilElement {
+
   }
   var HTMLTestingEventEmitterElement: {
     prototype: HTMLTestingEventEmitterElement;
     new (): HTMLTestingEventEmitterElement;
   };
   interface HTMLElementTagNameMap {
-    "testing-event-emitter": HTMLTestingEventEmitterElement;
+    'testing-event-emitter': HTMLTestingEventEmitterElement;
   }
   interface ElementTagNameMap {
-    "testing-event-emitter": HTMLTestingEventEmitterElement;
+    'testing-event-emitter': HTMLTestingEventEmitterElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "testing-event-emitter": JSXElements.TestingEventEmitterAttributes;
+      'testing-event-emitter': JSXElements.TestingEventEmitterAttributes;
     }
   }
   namespace JSXElements {
     export interface TestingEventEmitterAttributes extends HTMLAttributes {
-      
+      'onSomethingHappened'?: (event: CustomEvent<SomethingHappened>) => void;
     }
   }
 }
 
 
-import {
-  TestingMethods as TestingMethods
-} from './components/testing-methods/testing-methods';
-
 declare global {
-  interface HTMLTestingMethodsElement extends TestingMethods, HTMLStencilElement {
+  interface HTMLTestingMethodsElement extends HTMLStencilElement {
+    'incrementCount': () => void;
   }
   var HTMLTestingMethodsElement: {
     prototype: HTMLTestingMethodsElement;
     new (): HTMLTestingMethodsElement;
   };
   interface HTMLElementTagNameMap {
-    "testing-methods": HTMLTestingMethodsElement;
+    'testing-methods': HTMLTestingMethodsElement;
   }
   interface ElementTagNameMap {
-    "testing-methods": HTMLTestingMethodsElement;
+    'testing-methods': HTMLTestingMethodsElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "testing-methods": JSXElements.TestingMethodsAttributes;
+      'testing-methods': JSXElements.TestingMethodsAttributes;
     }
   }
   namespace JSXElements {
     export interface TestingMethodsAttributes extends HTMLAttributes {
-      
+
     }
   }
 }
 
 
-import {
-  TestingProps as TestingProps
-} from './components/testing-props/testing-props';
-
 declare global {
-  interface HTMLTestingPropsElement extends TestingProps, HTMLStencilElement {
+  interface HTMLTestingPropsElement extends HTMLStencilElement {
+    'first': string;
+    'last': string;
   }
   var HTMLTestingPropsElement: {
     prototype: HTMLTestingPropsElement;
     new (): HTMLTestingPropsElement;
   };
   interface HTMLElementTagNameMap {
-    "testing-props": HTMLTestingPropsElement;
+    'testing-props': HTMLTestingPropsElement;
   }
   interface ElementTagNameMap {
-    "testing-props": HTMLTestingPropsElement;
+    'testing-props': HTMLTestingPropsElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "testing-props": JSXElements.TestingPropsAttributes;
+      'testing-props': JSXElements.TestingPropsAttributes;
     }
   }
   namespace JSXElements {
     export interface TestingPropsAttributes extends HTMLAttributes {
-      first?: string;
-      last?: string;
+      'first'?: string;
+      'last'?: string;
     }
   }
 }
 
 
-import {
-  TestingRender as TestingRender
-} from './components/testing-render/testing-render';
-
 declare global {
-  interface HTMLTestingRenderElement extends TestingRender, HTMLStencilElement {
+  interface HTMLTestingRenderElement extends HTMLStencilElement {
+
   }
   var HTMLTestingRenderElement: {
     prototype: HTMLTestingRenderElement;
     new (): HTMLTestingRenderElement;
   };
   interface HTMLElementTagNameMap {
-    "testing-render": HTMLTestingRenderElement;
+    'testing-render': HTMLTestingRenderElement;
   }
   interface ElementTagNameMap {
-    "testing-render": HTMLTestingRenderElement;
+    'testing-render': HTMLTestingRenderElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "testing-render": JSXElements.TestingRenderAttributes;
+      'testing-render': JSXElements.TestingRenderAttributes;
     }
   }
   namespace JSXElements {
     export interface TestingRenderAttributes extends HTMLAttributes {
-      
+
+    }
+  }
+}
+
+
+declare global {
+  interface HTMLTestingUpdatesAriaPropertyElement extends HTMLStencilElement {
+
+  }
+  var HTMLTestingUpdatesAriaPropertyElement: {
+    prototype: HTMLTestingUpdatesAriaPropertyElement;
+    new (): HTMLTestingUpdatesAriaPropertyElement;
+  };
+  interface HTMLElementTagNameMap {
+    'testing-updates-aria-property': HTMLTestingUpdatesAriaPropertyElement;
+  }
+  interface ElementTagNameMap {
+    'testing-updates-aria-property': HTMLTestingUpdatesAriaPropertyElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'testing-updates-aria-property': JSXElements.TestingUpdatesAriaPropertyAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface TestingUpdatesAriaPropertyAttributes extends HTMLAttributes {
+
     }
   }
 }

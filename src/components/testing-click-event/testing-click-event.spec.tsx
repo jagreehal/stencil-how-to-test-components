@@ -1,4 +1,4 @@
-import { render, flush } from '@stencil/core/testing';
+import { TestWindow } from '@stencil/core/testing';
 import { TestingClickEvent } from './testing-click-event';
 
 describe('testing-click-event', () => {
@@ -8,17 +8,19 @@ describe('testing-click-event', () => {
 
   describe('when clicking', () => {
     let element;
+    let window;
     beforeEach(async () => {
-      element = await render({
+      window = new TestWindow();
+      element = await window.load({
         components: [TestingClickEvent],
         html: '<testing-click-event></testing-click-event>'
       });
     });
 
     it('should be able to set day class', async () => {
-      await flush(element);
+      await window.flush();
       element.querySelectorAll('[data-test="day"]')[2].click();
-      await flush(element);
+      await window.flush();
       expect(element.querySelector('.day-selected').textContent).toBe('Tu')
     });
   });
