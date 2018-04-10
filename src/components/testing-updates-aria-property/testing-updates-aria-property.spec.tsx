@@ -1,4 +1,4 @@
-import { render, flush } from '@stencil/core/testing';
+import { TestWindow } from '@stencil/core/testing';
 import { TestingUpdatesAriaProperty } from './testing-updates-aria-property';
 
 describe('testing-updates-aria-property', () => {
@@ -8,24 +8,26 @@ describe('testing-updates-aria-property', () => {
 
   describe('rendering', () => {
     let element;
+    let window;
     beforeEach(async () => {
-      element = await render({
+      window = new TestWindow();
+      element = await window.load({
         components: [TestingUpdatesAriaProperty],
         html: '<testing-updates-aria-property></testing-updates-aria-property>'
       });
-      await flush(element);
+      await window.flush();
     });
 
-    it('should be hidden by default', async () => {    
-      const content = element.querySelector('#content');      
+    it('should be hidden by default', async () => {
+      const content = element.querySelector('#content');
       expect(content.getAttribute('aria-hidden')).toBe('true');
     });
 
-    it('should NOT be hidden when toggled', async () => {    
+    it('should NOT be hidden when toggled', async () => {
       element.querySelector('[data-test="toggle"]').click();
 
-      await flush(element);
-      const content = element.querySelector('#content');   
+      await window.flush();
+      const content = element.querySelector('#content');
       expect(content.getAttribute('aria-hidden')).toBe('false');
     });
   });

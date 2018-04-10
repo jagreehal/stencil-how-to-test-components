@@ -1,4 +1,4 @@
-import { render, flush } from '@stencil/core/testing';
+import { TestWindow } from '@stencil/core/testing';
 import { TestingRender } from './testing-render';
 
 describe('testing-render', () => {
@@ -8,15 +8,17 @@ describe('testing-render', () => {
 
   describe('rendering', () => {
     let element;
+    let window;
     beforeEach(async () => {
-      element = await render({
+      window = new TestWindow();
+      element = await window.load({
         components: [TestingRender],
         html: '<testing-render></testing-render>'
       });
     });
 
     it('should be able to render component', async () => {
-      await flush(element);
+      await window.flush();
       expect(element.querySelectorAll('[data-test="day"]').length).toEqual(7);
     });
   });

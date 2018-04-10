@@ -1,4 +1,4 @@
-import { render, flush } from '@stencil/core/testing';
+import { TestWindow } from '@stencil/core/testing';
 import { TestingProps } from './testing-props';
 
 describe('testing-props', () => {
@@ -7,26 +7,28 @@ describe('testing-props', () => {
   });
 
   describe('can pass props using element attributes', () => {
+    let window;
     let element;
     beforeEach(async () => {
-      // @ts-ignore
-      element = await render({
+      window = new TestWindow();
+      element = await window.load({
         components: [TestingProps],
         html: '<testing-props first="Peter" last="Parker"></testing-props>'
       });
     });
 
     it('should work with both the first and the last name', async () => {
-      await flush(element);
+      await window.flush();
       expect(element.textContent).toEqual('Hello, my name is Peter Parker');
     });
   });
 
   describe('can change props via element', () => {
     let element;
+    let window;
     beforeEach(async () => {
-      // @ts-ignore
-      element = await render({
+      window = new TestWindow();
+      element = await window.load({
         components: [TestingProps],
         html: '<testing-props></testing-props>'
       });
@@ -35,7 +37,7 @@ describe('testing-props', () => {
     it('should work with both the first and the last name', async () => {
       element.first = 'Peter';
       element.last = 'Parker';
-      await flush(element);
+      await window.flush();
       expect(element.textContent).toEqual('Hello, my name is Peter Parker');
     });
   });

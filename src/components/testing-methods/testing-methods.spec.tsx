@@ -1,4 +1,4 @@
-import { render, flush } from '@stencil/core/testing';
+import { TestWindow } from '@stencil/core/testing';
 import { TestingMethods } from './testing-methods';
 
 describe.only('testing-methods', () => {
@@ -8,19 +8,19 @@ describe.only('testing-methods', () => {
 
   describe('rendering', () => {
     let element;
+    let window;
     beforeEach(async () => {
-      element = await render({
+      window = new TestWindow();
+      element = await window.load({
         components: [TestingMethods],
         html: '<testing-methods></testing-methods>'
       });
     });
 
     it('should be able to call method to increment count', async () => {
-
       element.incrementCount();
-      await flush(element);
+      await window.flush();
       expect(element.textContent).toBe('1');
-
     });
   });
 });
