@@ -19,52 +19,18 @@ describe('testing-event-emitter', () => {
       await window.flush();
     });
 
-    // this fails at the moment :(
-    it('should be able to confirm event emitter', async () => {
-
-      // arrange
-      const callback = jest.fn();
-      const div = document.createElement('div');
-      document.body.appendChild(div);
-      div.addEventListener('somethingHappened', callback);
-
-      // act
-      element.querySelector('button').click();
-
-      // assert
-      expect(callback).toHaveBeenCalled();
-    });
-
-    it('but testing custom events do work!', () => {
-      // arrange
-      const callback = jest.fn();
-      const div = document.createElement('div');
-      document.body.appendChild(div);
-
-      div.addEventListener('click', callback);
-
-      const event = document.createEvent('CustomEvent');
-      event.initEvent('click', true, true);
-      div.dispatchEvent(event);
-
-      // assert
-      expect(callback).toHaveBeenCalled();
-    });
-
-    it('should be able to confirm event emitter using a spy', async () => {
+    it('should be able to confirm event emitter using a xxx', async () => {
 
       // arrange      
-      element.somethingHappened = {
-        emit: () => { }
-      };
-
-      const spy = jest.spyOn(element.somethingHappened, 'emit');
+      const _callback = jest.fn();
+      element.addEventListener('somethingHappened', _callback);
+      await window.flush();
 
       // act
       element.querySelector('button').click();
 
       // assert
-      expect(spy).toHaveBeenCalled();
+      expect(_callback).toHaveBeenCalled();
     });
   });
 });

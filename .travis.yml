@@ -7,4 +7,3 @@ install:
 script:
   - npm run lint
   - npm test
-  - npm deploy
