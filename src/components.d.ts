@@ -20,31 +20,30 @@ declare global {
 
 
 import {
-  MyApp as MyApp
-} from './components/my-app/my-app';
+  TestingClickEvent as TestingClickEvent
+} from './components/testing-click-event/testing-click-event';
 
 declare global {
-  interface HTMLMyAppElement extends MyApp, HTMLStencilElement {
+  interface HTMLTestingClickEventElement extends TestingClickEvent, HTMLStencilElement {
   }
-  var HTMLMyAppElement: {
-    prototype: HTMLMyAppElement;
-    new (): HTMLMyAppElement;
+  var HTMLTestingClickEventElement: {
+    prototype: HTMLTestingClickEventElement;
+    new (): HTMLTestingClickEventElement;
   };
   interface HTMLElementTagNameMap {
-    "my-app": HTMLMyAppElement;
+    "testing-click-event": HTMLTestingClickEventElement;
   }
   interface ElementTagNameMap {
-    "my-app": HTMLMyAppElement;
+    "testing-click-event": HTMLTestingClickEventElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "my-app": JSXElements.MyAppAttributes;
+      "testing-click-event": JSXElements.TestingClickEventAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyAppAttributes extends HTMLAttributes {
-      first?: string;
-      last?: string;
+    export interface TestingClickEventAttributes extends HTMLAttributes {
+      
     }
   }
 }
@@ -136,6 +135,36 @@ declare global {
     export interface TestingPropsAttributes extends HTMLAttributes {
       first?: string;
       last?: string;
+    }
+  }
+}
+
+
+import {
+  TestingRender as TestingRender
+} from './components/testing-render/testing-render';
+
+declare global {
+  interface HTMLTestingRenderElement extends TestingRender, HTMLStencilElement {
+  }
+  var HTMLTestingRenderElement: {
+    prototype: HTMLTestingRenderElement;
+    new (): HTMLTestingRenderElement;
+  };
+  interface HTMLElementTagNameMap {
+    "testing-render": HTMLTestingRenderElement;
+  }
+  interface ElementTagNameMap {
+    "testing-render": HTMLTestingRenderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "testing-render": JSXElements.TestingRenderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface TestingRenderAttributes extends HTMLAttributes {
+      
     }
   }
 }
