@@ -1,6 +1,7 @@
 import { render, flush } from '@stencil/core/testing';
 import { TestingEventEmitter } from './testing-event-emitter';
 
+
 describe('testing-event-emitter', () => {
   it('should build', () => {
     expect(new TestingEventEmitter()).toBeTruthy();
@@ -13,11 +14,11 @@ describe('testing-event-emitter', () => {
         components: [TestingEventEmitter],
         html: '<testing-event-emitter></testing-event-emitter>'
       });
+      await flush(element);
     });
 
     // this fails at the moment :(
     it('should be able to confirm event emitter', async () => {
-      await flush(element);
 
       // arrange
       const callback = jest.fn();
@@ -46,6 +47,22 @@ describe('testing-event-emitter', () => {
 
       // assert
       expect(callback).toHaveBeenCalled();
+    });
+
+    it('should be able to confirm event emitter using a spy', async () => {
+
+      // arrange      
+      element.somethingHappened = {
+        emit: () => { }
+      };
+
+      const spy = jest.spyOn(element.somethingHappened, 'emit');
+
+      // act
+      element.querySelector('button').click();
+
+      // assert
+      expect(spy).toHaveBeenCalled();
     });
   });
 });
