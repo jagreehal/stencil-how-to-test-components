@@ -6,7 +6,7 @@ Examples of how to test [Stencil](https://stenciljs.com) components... both what
 
 ### [EventEmitter](https://stenciljs.com/docs/events)
 
-✅  can't assert events have been raised
+✅ can assert events have been raised
 
 ### [Methods](https://stenciljs.com/docs/decorators)
 
@@ -15,4 +15,9 @@ Examples of how to test [Stencil](https://stenciljs.com) components... both what
 ### [Props](https://stenciljs.com/docs/decorators)
 
 ✅ can set props on element
+
 ✅ can change prop value
+
+### Snapshots
+
+📷 can use snapshots
