@@ -4,7 +4,7 @@ exports[`using-snapshots rendering should work with both the first and the last 
 <using-snapshots
   class="hydrated"
 >
-  <!---->
+  
   <div>
     Hello, my name is Peter Parker
   </div>
