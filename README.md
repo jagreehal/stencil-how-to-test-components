@@ -1,6 +1,6 @@
 ## Examples of testing Stencil Components
 
-[![Build Status](https://travis-ci.org/jagreehal/stencil-how-to-test-components.svg?branch=master)](https://travis-ci.org/jagreehal/stencil-how-to-test-components)
+[![Build Status](https://travis-ci.org/jagreehal/stencil-how-to-test-components.svg?branch=master)](https://travis-ci.org/jagreehal/stencil-how-to-test-components) [![Greenkeeper badge](https://badges.greenkeeper.io/jagreehal/stencil-how-to-test-components.svg)](https://greenkeeper.io/)
 
 Examples of how to test [Stencil](https://stenciljs.com) components... both what works and doesn't!
 

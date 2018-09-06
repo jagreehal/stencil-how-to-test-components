@@ -26,7 +26,7 @@
   "author": "Jag Reehal",
   "license": "ISC",
   "dependencies": {
-    "@stencil/core": "0.9.7"
+    "@stencil/core": "0.10.4"
   },
   "devDependencies": {
     "@stencil/dev-server": "^0.0.18",
@@ -35,7 +35,7 @@
     "@stencil/utils": "^0.0.4",
     "@types/jest": "^23.0.0",
     "autoprefixer": "^8.6.0",
-    "cssnano": "^3.10.0",
+    "cssnano": "^4.0.1",
     "gh-pages": "1.2.0",
     "jest": "^23.1.0",
     "postcss-reporter": "5.0.0",
