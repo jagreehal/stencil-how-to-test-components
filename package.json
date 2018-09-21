@@ -32,7 +32,7 @@
     "@stencil/dev-server": "^0.0.18",
     "@stencil/postcss": "0.0.4",
     "@stencil/sass": "0.0.5",
-    "@stencil/utils": "^0.0.4",
+    "@stencil/utils": "^0.0.5",
     "@types/jest": "^23.0.0",
     "autoprefixer": "^8.6.0",
     "cssnano": "^4.0.1",
