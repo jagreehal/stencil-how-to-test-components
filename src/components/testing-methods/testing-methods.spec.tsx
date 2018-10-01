@@ -1,26 +1,17 @@
-import { TestWindow } from '@stencil/core/testing';
 import { TestingMethods } from './testing-methods';
 
-describe.only('testing-methods', () => {
+describe('testing-methods', () => {
   it('should build', () => {
     expect(new TestingMethods()).toBeTruthy();
   });
 
-  describe('rendering', () => {
-    let element;
-    let window;
-    beforeEach(async () => {
-      window = new TestWindow();
-      element = await window.load({
-        components: [TestingMethods],
-        html: '<testing-methods></testing-methods>'
-      });
-    });
+  it('should be able to increment counter', async () => {
+    const el = new TestingMethods();
 
-    it('should be able to call method to increment count', async () => {
-      element.incrementCount();
-      await window.flush();
-      expect(element.textContent).toBe('1');
-    });
+    expect(el.counter).toBe(0);
+
+    el.incrementCount();
+
+    expect(el.counter).toBe(1);
   });
 });
