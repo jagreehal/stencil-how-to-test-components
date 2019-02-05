@@ -34,7 +34,7 @@
   "devDependencies": {
     "@stencil/dev-server": "^0.0.18",
     "@stencil/utils": "^0.0.5",
-    "@types/jest": "^23.3.5",
+    "@types/jest": "^24.0.0",
     "@types/puppeteer": "^1.9.0",
     "jest": "23.5.0",
     "jest-environment-node": "^23.4.0",
