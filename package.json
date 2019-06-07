@@ -38,7 +38,7 @@
     "@types/puppeteer": "^1.9.0",
     "jest": "23.5.0",
     "jest-environment-node": "^23.4.0",
-    "pixelmatch": "4.0.2",
+    "pixelmatch": "5.0.0",
     "prettier": "^1.14.3",
     "puppeteer": "1.11.0",
     "rimraf": "^2.6.2",
