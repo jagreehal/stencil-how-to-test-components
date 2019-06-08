@@ -1,4 +1,4 @@
-import { Component, State, Method } from '@stencil/core';
+import { Component, h, State, Method } from '@stencil/core';
 
 @Component({
   tag: 'testing-methods',
@@ -13,7 +13,7 @@ export class TestingMethods {
   @State() counter: number = 0;
 
   @Method()
-  incrementCount() {
+  async incrementCount() {
     this.counter++;
   }
 

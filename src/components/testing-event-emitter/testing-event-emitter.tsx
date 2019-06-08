@@ -1,6 +1,6 @@
-import { Component, Event, EventEmitter } from '@stencil/core';
+import { Component, h, Event, EventEmitter } from '@stencil/core';
 
-interface SomethingHappened {
+export interface SomethingHappened {
   message: string;
 }
 

@@ -2,7 +2,8 @@
   "name": "stencil-how-to-test-components",
   "version": "1.0.0",
   "description": "stencil how to test components",
-  "main": "dist/stencil-app.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
@@ -13,7 +14,7 @@
     "clean": "rimraf dist",
     "copy:static": "cp -r ./static/ ./dist",
     "deploy": "gh-pages -d dist",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\"",
+    "dev": "stencil build --dev --watch --serve",
     "lint": "sd concurrent \"npm run lint:ts\"",
     "lint:ts": "tslint -p tsconfig.json -c tslint.json",
     "serve": "stencil-dev-server",
@@ -29,35 +30,23 @@
   "author": "Jag Reehal",
   "license": "ISC",
   "dependencies": {
-    "@stencil/core": "latest"
+    "@stencil/core": "1.0.1"
   },
   "devDependencies": {
-    "@stencil/dev-server": "^0.0.18",
     "@stencil/utils": "^0.0.5",
-    "@types/jest": "^23.3.5",
-    "@types/puppeteer": "^1.9.0",
-    "jest": "23.5.0",
-    "jest-environment-node": "^23.4.0",
-    "pixelmatch": "4.0.2",
-    "prettier": "^1.14.3",
-    "puppeteer": "1.11.0",
-    "rimraf": "^2.6.2",
-    "tslint": "^5.11.0",
+    "@types/jest": "24.0.13",
+    "@types/puppeteer": "1.12.4",
+    "jest": "24.8.0",
+    "jest-cli": "24.8.0",
+    "prettier": "^1.18.2",
+    "puppeteer": "1.17.0",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.17.0",
     "tslint-config-airbnb": "5.11.1",
-    "tslint-config-prettier": "^1.15.0",
-    "typescript": "^3.1.3"
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.1"
   },
   "jest": {
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json",
-      "jsx"
-    ]
+    "preset": "@stencil/core/testing"
   }
 }
