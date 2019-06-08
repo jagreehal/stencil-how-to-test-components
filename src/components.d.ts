@@ -10,10 +10,9 @@ import {
   SomethingHappened,
 } from './components/testing-event-emitter/testing-event-emitter';
 
-
 export namespace Components {
   interface CallbackTest {
-    'clickProp': undefined;
+    'clickProp': Function | undefined;
   }
   interface TestingClickEvent {}
   interface TestingEventEmitter {}
@@ -96,7 +95,7 @@ declare global {
 
 declare namespace LocalJSX {
   interface CallbackTest extends JSXBase.HTMLAttributes<HTMLCallbackTestElement> {
-    'clickProp'?: undefined;
+    'clickProp'?: Function | undefined;
   }
   interface TestingClickEvent extends JSXBase.HTMLAttributes<HTMLTestingClickEventElement> {}
   interface TestingEventEmitter extends JSXBase.HTMLAttributes<HTMLTestingEventEmitterElement> {
