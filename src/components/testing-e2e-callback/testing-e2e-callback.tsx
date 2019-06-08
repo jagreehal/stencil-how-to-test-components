@@ -10,13 +10,15 @@ export class CallbackTest {
   }
 
   @Prop()
-  clickProp: undefined;
+  clickProp: Function | undefined;
 
   clickHandler = () => {
-    console.log('do something interesting before invoking the callback', this.clickProp);
+    if (typeof this.clickProp === 'function') {
+      console.log(
+        'do something interesting before invoking the callback',
+        this.clickProp
+      );
 
-    // Invoke the callback function
-    if (this.clickProp !== undefined) {
       this.clickProp();
     }
   };
