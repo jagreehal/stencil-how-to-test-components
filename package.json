@@ -10,7 +10,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "npm run clean && stencil build --prerender",
+    "build": "npm run clean && stencil build",
     "clean": "rimraf dist",
     "copy:static": "cp -r ./static/ ./dist",
     "deploy": "gh-pages -d dist",
@@ -30,7 +30,7 @@
   "author": "Jag Reehal",
   "license": "ISC",
   "dependencies": {
-    "@stencil/core": "1.0.1"
+    "@stencil/core": "1.0.2"
   },
   "devDependencies": {
     "@stencil/utils": "^0.0.5",
