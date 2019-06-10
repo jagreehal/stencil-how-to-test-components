@@ -5,7 +5,6 @@ import { Component, h, State, Method } from '@stencil/core';
   shadow: true
 })
 export class TestingMethods {
-
   constructor() {
     this.incrementCount = this.incrementCount.bind(this);
   }
@@ -14,15 +13,10 @@ export class TestingMethods {
 
   @Method()
   async incrementCount() {
-    this.counter++;
+    return this.counter++;
   }
 
-
   render() {
-    return (
-      <div>
-        {this.counter}
-      </div>
-    );
+    return <div>{this.counter}</div>;
   }
 }

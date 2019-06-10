@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`using-snapshots e2e rendering should work with both the first and the last name 1`] = `"<div>Hello, my name is Peter Parker</div>"`;
+
 exports[`using-snapshots rendering should work with both the first and the last name 1`] = `"<div>Hello, my name is Peter Parker</div>"`;
