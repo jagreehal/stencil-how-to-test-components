@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`using-snapshots rendering should work with both the first and the last name 1`] = `
+<using-snapshots>
+  <div>
+    Hello, my name is Peter Parker
+  </div>
+</using-snapshots>
+`;

@@ -17,7 +17,7 @@ export namespace Components {
   interface TestingClickEvent {}
   interface TestingEventEmitter {}
   interface TestingMethods {
-    'incrementCount': () => Promise<void>;
+    'incrementCount': () => Promise<number>;
   }
   interface TestingProps {
     'first': string;

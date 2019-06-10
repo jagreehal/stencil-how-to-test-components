@@ -1,3 +1,4 @@
+import { newSpecPage } from '@stencil/core/testing';
 import { TestingMethods } from './testing-methods';
 
 describe('testing-methods', () => {
@@ -5,13 +6,22 @@ describe('testing-methods', () => {
     expect(new TestingMethods()).toBeTruthy();
   });
 
-  it('should be able to increment counter', async () => {
-    const el = new TestingMethods();
+  describe('rendering', () => {
+    let page;
+    let shadowRoot;
+    beforeEach(async () => {
+      page = await newSpecPage({
+        components: [TestingMethods],
+        html: '<testing-methods></testing-methods>',
+        supportsShadowDom: true
+      });
+      shadowRoot = page.root.shadowRoot;
+    });
 
-    expect(el.counter).toBe(0);
-
-    el.incrementCount();
-
-    expect(el.counter).toBe(1);
+    it('should be able to call method to increment count', async () => {
+      await page.root.incrementCount();
+      await page.waitForChanges();
+      expect(shadowRoot.textContent).toBe('1');
+    });
   });
 });

@@ -1,6 +1,6 @@
 import { E2EElement, E2EPage, newE2EPage } from '@stencil/core/testing';
 
-describe('using-snapshots', () => {
+describe('using-snapshots e2e', () => {
   describe('rendering', () => {
     let page: E2EPage;
     let element: E2EElement;
