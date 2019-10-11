@@ -94,21 +94,21 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface CallbackTest extends JSXBase.HTMLAttributes<HTMLCallbackTestElement> {
+  interface CallbackTest {
     'clickProp'?: Function | undefined;
   }
-  interface TestingClickEvent extends JSXBase.HTMLAttributes<HTMLTestingClickEventElement> {}
-  interface TestingEventEmitter extends JSXBase.HTMLAttributes<HTMLTestingEventEmitterElement> {
+  interface TestingClickEvent {}
+  interface TestingEventEmitter {
     'onSomethingHappened'?: (event: CustomEvent<SomethingHappened>) => void;
   }
-  interface TestingMethods extends JSXBase.HTMLAttributes<HTMLTestingMethodsElement> {}
-  interface TestingProps extends JSXBase.HTMLAttributes<HTMLTestingPropsElement> {
+  interface TestingMethods {}
+  interface TestingProps {
     'first'?: string;
     'last'?: string;
   }
-  interface TestingRender extends JSXBase.HTMLAttributes<HTMLTestingRenderElement> {}
-  interface TestingUpdatesAriaProperty extends JSXBase.HTMLAttributes<HTMLTestingUpdatesAriaPropertyElement> {}
-  interface UsingSnapshots extends JSXBase.HTMLAttributes<HTMLUsingSnapshotsElement> {
+  interface TestingRender {}
+  interface TestingUpdatesAriaProperty {}
+  interface UsingSnapshots {
     'first'?: string;
     'last'?: string;
   }
@@ -130,7 +130,16 @@ export { LocalJSX as JSX };
 
 declare module "@stencil/core" {
   export namespace JSX {
-    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+    interface IntrinsicElements {
+      'callback-test': LocalJSX.CallbackTest & JSXBase.HTMLAttributes<HTMLCallbackTestElement>;
+      'testing-click-event': LocalJSX.TestingClickEvent & JSXBase.HTMLAttributes<HTMLTestingClickEventElement>;
+      'testing-event-emitter': LocalJSX.TestingEventEmitter & JSXBase.HTMLAttributes<HTMLTestingEventEmitterElement>;
+      'testing-methods': LocalJSX.TestingMethods & JSXBase.HTMLAttributes<HTMLTestingMethodsElement>;
+      'testing-props': LocalJSX.TestingProps & JSXBase.HTMLAttributes<HTMLTestingPropsElement>;
+      'testing-render': LocalJSX.TestingRender & JSXBase.HTMLAttributes<HTMLTestingRenderElement>;
+      'testing-updates-aria-property': LocalJSX.TestingUpdatesAriaProperty & JSXBase.HTMLAttributes<HTMLTestingUpdatesAriaPropertyElement>;
+      'using-snapshots': LocalJSX.UsingSnapshots & JSXBase.HTMLAttributes<HTMLUsingSnapshotsElement>;
+    }
   }
 }
 
