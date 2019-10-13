@@ -1,9 +1,10 @@
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'testing-props'
+  tag: 'testing-props-shadow',
+  shadow: true
 })
-export class TestingProps {
+export class TestingPropsShadow {
   @Prop() first: string;
   @Prop() last: string;
 
