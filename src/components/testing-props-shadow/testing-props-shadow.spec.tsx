@@ -1,21 +1,24 @@
-import { newSpecPage, SpecPage } from '@stencil/core/testing';
-import { TestingProps } from './testing-props';
+import { newSpecPage } from '@stencil/core/testing';
+import { TestingPropsShadow } from './testing-props-shadow';
 
 describe('testing-props', () => {
   it('should build', () => {
-    expect(new TestingProps()).toBeTruthy();
+    expect(new TestingPropsShadow()).toBeTruthy();
   });
 
-  describe('can pass props using element attributes', () => {
-    let page: SpecPage;
+  describe('testing-props-shadow-unit', () => {
+    let page;
     let element;
 
     beforeEach(async () => {
       page = await newSpecPage({
-        components: [TestingProps],
-        html: '<testing-props first="Peter" last="Parker"></testing-props>'
+        components: [TestingPropsShadow],
+        html:
+          '<testing-props-shadow first="Peter" last="Parker"></testing-props-shadow>',
+        supportsShadowDom: true
       });
-      element = await page.doc.querySelector('testing-props');
+
+      element = page.root.shadowRoot;
     });
 
     it('should work with both the first and the last name', async () => {
@@ -23,9 +26,11 @@ describe('testing-props', () => {
     });
 
     it('should be able to change first and the last name', async () => {
-      element.first = 'Bruce';
-      element.last = 'Wayne';
+      page.root.first = 'Bruce';
+      page.root.last = 'Wayne';
+
       await page.waitForChanges();
+
       expect(element.textContent).toEqual('Hello, my name is Bruce Wayne');
     });
   });

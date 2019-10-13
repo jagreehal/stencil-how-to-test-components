@@ -23,6 +23,10 @@ export namespace Components {
     'first': string;
     'last': string;
   }
+  interface TestingPropsShadow {
+    'first': string;
+    'last': string;
+  }
   interface TestingRender {}
   interface TestingUpdatesAriaProperty {}
   interface UsingSnapshots {
@@ -64,6 +68,12 @@ declare global {
     new (): HTMLTestingPropsElement;
   };
 
+  interface HTMLTestingPropsShadowElement extends Components.TestingPropsShadow, HTMLStencilElement {}
+  var HTMLTestingPropsShadowElement: {
+    prototype: HTMLTestingPropsShadowElement;
+    new (): HTMLTestingPropsShadowElement;
+  };
+
   interface HTMLTestingRenderElement extends Components.TestingRender, HTMLStencilElement {}
   var HTMLTestingRenderElement: {
     prototype: HTMLTestingRenderElement;
@@ -87,6 +97,7 @@ declare global {
     'testing-event-emitter': HTMLTestingEventEmitterElement;
     'testing-methods': HTMLTestingMethodsElement;
     'testing-props': HTMLTestingPropsElement;
+    'testing-props-shadow': HTMLTestingPropsShadowElement;
     'testing-render': HTMLTestingRenderElement;
     'testing-updates-aria-property': HTMLTestingUpdatesAriaPropertyElement;
     'using-snapshots': HTMLUsingSnapshotsElement;
@@ -106,6 +117,10 @@ declare namespace LocalJSX {
     'first'?: string;
     'last'?: string;
   }
+  interface TestingPropsShadow {
+    'first'?: string;
+    'last'?: string;
+  }
   interface TestingRender {}
   interface TestingUpdatesAriaProperty {}
   interface UsingSnapshots {
@@ -119,6 +134,7 @@ declare namespace LocalJSX {
     'testing-event-emitter': TestingEventEmitter;
     'testing-methods': TestingMethods;
     'testing-props': TestingProps;
+    'testing-props-shadow': TestingPropsShadow;
     'testing-render': TestingRender;
     'testing-updates-aria-property': TestingUpdatesAriaProperty;
     'using-snapshots': UsingSnapshots;
@@ -136,6 +152,7 @@ declare module "@stencil/core" {
       'testing-event-emitter': LocalJSX.TestingEventEmitter & JSXBase.HTMLAttributes<HTMLTestingEventEmitterElement>;
       'testing-methods': LocalJSX.TestingMethods & JSXBase.HTMLAttributes<HTMLTestingMethodsElement>;
       'testing-props': LocalJSX.TestingProps & JSXBase.HTMLAttributes<HTMLTestingPropsElement>;
+      'testing-props-shadow': LocalJSX.TestingPropsShadow & JSXBase.HTMLAttributes<HTMLTestingPropsShadowElement>;
       'testing-render': LocalJSX.TestingRender & JSXBase.HTMLAttributes<HTMLTestingRenderElement>;
       'testing-updates-aria-property': LocalJSX.TestingUpdatesAriaProperty & JSXBase.HTMLAttributes<HTMLTestingUpdatesAriaPropertyElement>;
       'using-snapshots': LocalJSX.UsingSnapshots & JSXBase.HTMLAttributes<HTMLUsingSnapshotsElement>;
