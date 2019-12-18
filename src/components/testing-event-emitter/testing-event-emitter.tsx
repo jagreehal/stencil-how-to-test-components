@@ -1,18 +1,17 @@
-import { Component, h, Event, EventEmitter } from '@stencil/core';
+import { Component, h, Event, EventEmitter } from "@stencil/core";
 
 export interface SomethingHappened {
   message: string;
 }
 
 @Component({
-  tag: 'testing-event-emitter'
+  tag: "testing-event-emitter"
 })
 export class TestingEventEmitter {
-  @Event()
-  somethingHappened: EventEmitter<SomethingHappened>;
+  @Event() somethingHappened: EventEmitter<SomethingHappened>;
 
   handleClick = () => {
-    this.somethingHappened.emit({ message: 'clicked!' });
+    this.somethingHappened.emit({ message: "clicked!" });
   };
 
   render() {
