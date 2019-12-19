@@ -1,20 +1,19 @@
-import { Component, h, Prop } from "@stencil/core";
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: "callback-test",
+  tag: 'callback-test',
   shadow: true
 })
 export class CallbackTest {
-  constructor() {
-    this.clickHandler = this.clickHandler.bind(this);
-  }
-
+  /**
+   * callback function button click
+   */
   @Prop() clickProp: Function | undefined;
 
-  clickHandler = () => {
-    if (typeof this.clickProp === "function") {
+  private clickHandler = () => {
+    if (typeof this.clickProp === 'function') {
       console.log(
-        "do something interesting before invoking the callback",
+        'do something interesting before invoking the callback',
         this.clickProp
       );
 
@@ -24,7 +23,7 @@ export class CallbackTest {
 
   render() {
     return (
-      <button class="button" onClick={this.clickHandler}>
+      <button class="button" onClick={() => this.clickHandler()}>
         Button
       </button>
     );

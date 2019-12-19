@@ -4,7 +4,13 @@ import { Component, h, Prop } from '@stencil/core';
   tag: 'testing-props'
 })
 export class TestingProps {
+  /**
+   * the first name
+   */
   @Prop() first: string;
+  /**
+   * the name name
+   */
   @Prop() last: string;
 
   render() {

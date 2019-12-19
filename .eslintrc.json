@@ -6,5 +6,8 @@
     "prettier",
     "prettier/@typescript-eslint",
     "plugin:@stencil/recommended"
-  ]
+  ],
+  "rules": {
+    "react/jsx-no-bind": 0
+  }
 }

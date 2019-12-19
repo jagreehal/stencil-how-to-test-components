@@ -13,25 +13,49 @@ import {
 
 export namespace Components {
   interface CallbackTest {
+    /**
+    * callback function button click
+    */
     'clickProp': Function | undefined;
   }
   interface TestingClickEvent {}
   interface TestingEventEmitter {}
   interface TestingMethods {
+    /**
+    * increments the counter by 1
+    */
     'incrementCount': () => Promise<number>;
   }
   interface TestingProps {
+    /**
+    * the first name
+    */
     'first': string;
+    /**
+    * the name name
+    */
     'last': string;
   }
   interface TestingPropsShadow {
+    /**
+    * The first name
+    */
     'first': string;
+    /**
+    * The last name
+    */
     'last': string;
   }
   interface TestingRender {}
   interface TestingUpdatesAriaProperty {}
   interface UsingSnapshots {
+    /**
+    * the first name
+    */
     'first': string;
+    /**
+    * the last name
+    */
     'last': string;
   }
 }
@@ -107,25 +131,49 @@ declare global {
 
 declare namespace LocalJSX {
   interface CallbackTest {
+    /**
+    * callback function button click
+    */
     'clickProp'?: Function | undefined;
   }
   interface TestingClickEvent {}
   interface TestingEventEmitter {
+    /**
+    * Emits message for SomethingHappened
+    */
     'onSomethingHappened'?: (event: CustomEvent<SomethingHappened>) => void;
   }
   interface TestingMethods {}
   interface TestingProps {
+    /**
+    * the first name
+    */
     'first'?: string;
+    /**
+    * the name name
+    */
     'last'?: string;
   }
   interface TestingPropsShadow {
+    /**
+    * The first name
+    */
     'first'?: string;
+    /**
+    * The last name
+    */
     'last'?: string;
   }
   interface TestingRender {}
   interface TestingUpdatesAriaProperty {}
   interface UsingSnapshots {
+    /**
+    * the first name
+    */
     'first'?: string;
+    /**
+    * the last name
+    */
     'last'?: string;
   }
 

@@ -5,7 +5,13 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true
 })
 export class TestingPropsShadow {
+  /**
+   * The first name
+   */
   @Prop() first: string;
+  /**
+   * The last name
+   */
   @Prop() last: string;
 
   render() {

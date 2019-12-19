@@ -4,7 +4,14 @@ import { Component, h, Prop } from '@stencil/core';
   tag: 'using-snapshots'
 })
 export class UsingSnapshots {
+  /**
+   * the first name
+   */
   @Prop() first: string;
+
+  /**
+   * the last name
+   */
   @Prop() last: string;
 
   render() {
