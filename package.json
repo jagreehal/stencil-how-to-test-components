@@ -36,7 +36,7 @@
     "@stencil/eslint-plugin": "^0.2.1",
     "@stencil/utils": "^0.0.5",
     "@types/jest": "24.0.25",
-    "@types/puppeteer": "1.20.3",
+    "@types/puppeteer": "2.0.1",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
     "eslint": "^6.6.0",
