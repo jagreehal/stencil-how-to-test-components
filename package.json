@@ -33,7 +33,7 @@
     "@stencil/core": "1.8.6"
   },
   "devDependencies": {
-    "@stencil/eslint-plugin": "^0.2.1",
+    "@stencil/eslint-plugin": "^0.3.1",
     "@stencil/utils": "^0.0.5",
     "@types/jest": "24.0.25",
     "@types/puppeteer": "1.20.3",
