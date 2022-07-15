@@ -1,6 +1,6 @@
 # Examples of how to test Stencil Components using Jest and Puppeteer
 
-[![Build Status](https://travis-ci.org/jagreehal/stencil-how-to-test-components.svg?branch=master)](https://travis-ci.org/jagreehal/stencil-how-to-test-components) [![Greenkeeper badge](https://badges.greenkeeper.io/jagreehal/stencil-how-to-test-components.svg)](https://greenkeeper.io/)
+![example workflow](https://github.com/jagreehal/stencil-how-to-test-components/actions/workflows/main/badge.svg)
 
 Examples of how to test [Stencil](https://stenciljs.com) components... both what works and doesn't!
 
