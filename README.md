@@ -1,6 +1,6 @@
 # Examples of how to test Stencil Components using Jest and Puppeteer
 
-![example workflow](https://github.com/jagreehal/stencil-how-to-test-components/actions/workflows/main/badge.svg)
+![Build](https://github.com/jagreehal/stencil-how-to-test-components/actions/workflows/main.yml/badge.svg)
 
 Examples of how to test [Stencil](https://stenciljs.com) components... both what works and doesn't!
 
