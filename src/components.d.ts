@@ -36,6 +36,10 @@ export namespace Components {
         "last": string;
     }
 }
+export interface TestingEventEmitterCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLTestingEventEmitterElement;
+}
 declare global {
     interface HTMLCallbackTestElement extends Components.CallbackTest, HTMLStencilElement {
     }
@@ -119,7 +123,7 @@ declare namespace LocalJSX {
     interface TestingClickEvent {
     }
     interface TestingEventEmitter {
-        "onSomethingHappened"?: (event: CustomEvent<SomethingHappened>) => void;
+        "onSomethingHappened"?: (event: TestingEventEmitterCustomEvent<SomethingHappened>) => void;
     }
     interface TestingMethods {
     }
