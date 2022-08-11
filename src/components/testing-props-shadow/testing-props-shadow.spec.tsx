@@ -13,9 +13,8 @@ describe('testing-props', () => {
     beforeEach(async () => {
       page = await newSpecPage({
         components: [TestingPropsShadow],
-        html:
-          '<testing-props-shadow first="Peter" last="Parker"></testing-props-shadow>',
-        supportsShadowDom: true
+        html: '<testing-props-shadow first="Peter" last="Parker"></testing-props-shadow>',
+        supportsShadowDom: true,
       });
 
       element = page.root.shadowRoot;
@@ -30,7 +29,6 @@ describe('testing-props', () => {
       page.root.last = 'Wayne';
 
       await page.waitForChanges();
-
       expect(element.textContent).toEqual('Hello, my name is Bruce Wayne');
     });
   });
