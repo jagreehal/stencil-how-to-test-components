@@ -8,7 +8,7 @@ describe('testing-props-e2e', () => {
     page = await newE2EPage({
       html: `
       <testing-props first="Peter" last="Parker"></testing-props>
-    `
+    `,
     });
     element = await page.find('testing-props');
   });
