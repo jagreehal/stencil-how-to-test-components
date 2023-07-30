@@ -16,7 +16,8 @@ describe('the component should', () => {
     await page.exposeFunction("functionToInject", callback);
 
     await page.$eval("callback-test", (elm: any) => {      
-        elm.clickProp = this.functionToInject;
+      // @ts-ignore  
+      elm.clickProp = this.functionToInject;
     });
 
     await page.waitForChanges();
