@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { SomethingHappened } from "./components/testing-event-emitter/testing-event-emitter";
+export { SomethingHappened } from "./components/testing-event-emitter/testing-event-emitter";
 export namespace Components {
     interface CallbackTest {
         "clickProp": Function | undefined;

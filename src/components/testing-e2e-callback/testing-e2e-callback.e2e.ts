@@ -1,8 +1,7 @@
-import { E2EElement, E2EPage, newE2EPage } from '@stencil/core/testing';
+import {  E2EPage, newE2EPage } from '@stencil/core/testing';
 
 describe('the component should', () => {
   let page: E2EPage;
-  let element: E2EElement;
   let button: any;
 
   beforeEach(async () => {
@@ -16,13 +15,16 @@ describe('the component should', () => {
     
     await page.exposeFunction("functionToInject", callback);
 
-    await page.$eval("callback-test", (elm: any) => {
+    await page.$eval("callback-test", (elm: any) => {      
+      // @ts-ignore  
       elm.clickProp = this.functionToInject;
     });
 
     await page.waitForChanges();
 
-    await button.click();
+    if (button) {
+      await button.click();
+    }
 
     expect(callback).toBeCalled();
   });
