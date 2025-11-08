@@ -28,7 +28,7 @@
   "author": "Jag Reehal",
   "license": "ISC",
   "dependencies": {
-    "@stencil/core": "^4.0.2"
+    "@stencil/core": "^4.38.2"
   },
   "devDependencies": {
     "@stencil-community/eslint-plugin": "^0.5.0",
