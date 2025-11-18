@@ -9,9 +9,12 @@ export class CallbackTest {
     this.clickHandler = this.clickHandler.bind(this);
   }
 
+  /**
+   * Click callback function
+   */
   @Prop() clickProp: Function | undefined;
 
-  clickHandler = () => {
+  private clickHandler = () => {
     if (typeof this.clickProp === "function") {
       console.log(
         "do something interesting before invoking the callback",
