@@ -25,6 +25,10 @@ export class TestingClickEvent {
     this.days = [...this.days, day];
   };
 
+  private handleDayClick = (day: Day) => {
+    return () => this.handleDayClicked(day);
+  }
+
   render() {
     return (
       <div>
@@ -34,7 +38,7 @@ export class TestingClickEvent {
             <div
               class={`day ${day.selected ? 'day-selected' : ''}`}
               data-test="day"
-              onClick={() => this.handleDayClicked(day)}
+              onClick={this.handleDayClick(day)}
             >
               {day.label}
             </div>

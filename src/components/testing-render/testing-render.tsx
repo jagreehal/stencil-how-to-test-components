@@ -19,9 +19,13 @@ export class TestingRender {
     { label: 'Sa', selected: false }
   ];
 
-  handleDayClicked = (day: Day) => {
+  private handleDayClicked = (day: Day) => {
     day.selected = !day.selected;
     this.days = [... this.days, day];
+  }
+
+  private handleDayClick = (day: Day) => {
+    return () => this.handleDayClicked(day);
   }
 
   render() {
@@ -30,7 +34,7 @@ export class TestingRender {
         <label>What days would you like notifications?</label>
         <div>
           {this.days.map(day =>
-            <div class={`day ${day.selected ? 'day-selected' : ''}`} data-test="day" onClick={() => this.handleDayClicked(day)}>{day.label}</div>
+            <div class={`day ${day.selected ? 'day-selected' : ''}`} data-test="day" onClick={this.handleDayClick(day)}>{day.label}</div>
           )}
         </div>
       </div>

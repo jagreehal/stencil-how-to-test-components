@@ -9,6 +9,9 @@ import { SomethingHappened } from "./components/testing-event-emitter/testing-ev
 export { SomethingHappened } from "./components/testing-event-emitter/testing-event-emitter";
 export namespace Components {
     interface CallbackTest {
+        /**
+          * Click callback function
+         */
         "clickProp": Function | undefined;
     }
     interface ComponentWithWorker {
@@ -18,14 +21,29 @@ export namespace Components {
     interface TestingEventEmitter {
     }
     interface TestingMethods {
+        /**
+          * Increments the counter value
+         */
         "incrementCount": () => Promise<number>;
     }
     interface TestingProps {
+        /**
+          * The first name
+         */
         "first": string;
+        /**
+          * The last name
+         */
         "last": string;
     }
     interface TestingPropsShadow {
+        /**
+          * The first name
+         */
         "first": string;
+        /**
+          * The last name
+         */
         "last": string;
     }
     interface TestingRender {
@@ -33,7 +51,13 @@ export namespace Components {
     interface TestingUpdatesAriaProperty {
     }
     interface UsingSnapshots {
+        /**
+          * The first name
+         */
         "first": string;
+        /**
+          * The last name
+         */
         "last": string;
     }
 }
@@ -60,7 +84,18 @@ declare global {
         prototype: HTMLTestingClickEventElement;
         new (): HTMLTestingClickEventElement;
     };
+    interface HTMLTestingEventEmitterElementEventMap {
+        "somethingHappened": SomethingHappened;
+    }
     interface HTMLTestingEventEmitterElement extends Components.TestingEventEmitter, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLTestingEventEmitterElementEventMap>(type: K, listener: (this: HTMLTestingEventEmitterElement, ev: TestingEventEmitterCustomEvent<HTMLTestingEventEmitterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLTestingEventEmitterElementEventMap>(type: K, listener: (this: HTMLTestingEventEmitterElement, ev: TestingEventEmitterCustomEvent<HTMLTestingEventEmitterElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLTestingEventEmitterElement: {
         prototype: HTMLTestingEventEmitterElement;
@@ -117,6 +152,9 @@ declare global {
 }
 declare namespace LocalJSX {
     interface CallbackTest {
+        /**
+          * Click callback function
+         */
         "clickProp"?: Function | undefined;
     }
     interface ComponentWithWorker {
@@ -124,16 +162,31 @@ declare namespace LocalJSX {
     interface TestingClickEvent {
     }
     interface TestingEventEmitter {
+        /**
+          * Event emitted when something happens
+         */
         "onSomethingHappened"?: (event: TestingEventEmitterCustomEvent<SomethingHappened>) => void;
     }
     interface TestingMethods {
     }
     interface TestingProps {
+        /**
+          * The first name
+         */
         "first"?: string;
+        /**
+          * The last name
+         */
         "last"?: string;
     }
     interface TestingPropsShadow {
+        /**
+          * The first name
+         */
         "first"?: string;
+        /**
+          * The last name
+         */
         "last"?: string;
     }
     interface TestingRender {
@@ -141,7 +194,13 @@ declare namespace LocalJSX {
     interface TestingUpdatesAriaProperty {
     }
     interface UsingSnapshots {
+        /**
+          * The first name
+         */
         "first"?: string;
+        /**
+          * The last name
+         */
         "last"?: string;
     }
     interface IntrinsicElements {
