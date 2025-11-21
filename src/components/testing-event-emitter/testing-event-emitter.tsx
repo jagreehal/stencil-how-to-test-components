@@ -8,9 +8,12 @@ export interface SomethingHappened {
   tag: "testing-event-emitter"
 })
 export class TestingEventEmitter {
+  /**
+   * Event emitted when something happens
+   */
   @Event() somethingHappened: EventEmitter<SomethingHappened>;
 
-  handleClick = () => {
+  private handleClick = () => {
     this.somethingHappened.emit({ message: "clicked!" });
   };
 

@@ -11,6 +11,9 @@ export class TestingMethods {
 
   @State() counter: number = 0;
 
+  /**
+   * Increments the counter value
+   */
   @Method()
   async incrementCount() {
     return this.counter++;

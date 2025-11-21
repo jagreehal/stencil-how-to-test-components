@@ -7,7 +7,7 @@ import { Component, h, State } from '@stencil/core';
 export class TestingUpdatesAriaProperty {
   @State() isHidden: boolean = true;
 
-  handleToggle = () => {
+  private handleToggle = () => {
     this.isHidden = !this.isHidden;
   }
 
