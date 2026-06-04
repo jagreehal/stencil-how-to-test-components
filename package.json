@@ -19,7 +19,7 @@
     "serve": "stencil-dev-server",
     "serve:prod": "npm run build && npm run copy:static && serve ./dist",
     "start": "npm run dev",
-    "test": "stencil test --spec --e2e",
+    "test": "stencil test --spec --e2e; node .github/setup.js",
     "test:watch": "stencil test --spec --e2e --watchAll",
     "test:unit": "stencil test --spec",
     "test:e2e": "stencil test --e2e",
